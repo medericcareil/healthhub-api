@@ -1,0 +1,88 @@
+{% extends "base.html.twig" %}
+
+{% block title %}- Inscription{% endblock %}
+
+{% block body %}
+
+    <div class="container wrap p-4 background">
+
+        <h1 class="text-center">Inscription</h1>
+
+        {{ form_start(form, { 'attr' : {'novalidate': 'novalidate', 'class': 'pt-5 pb-5'}}) }}
+
+            {{ form_label(form.pseudo) }}
+            {{ form_widget(form.pseudo) }}
+            {% if form_errors(form.pseudo) %}
+                <div class="alert alert-danger mt-2">
+                    {{ form_errors(form.pseudo) }}
+                </div>
+            {% endif %}
+
+            {{ form_label(form.gender, '', {'label_attr': {'class': 'mt-3'}}) }}
+            {{ form_widget(form.gender) }}
+            {% if form_errors(form.gender) %}
+                <div class="alert alert-danger mt-2">
+                    {{ form_errors(form.gender) }}
+                </div>
+            {% endif %}
+
+            {{ form_label(form.birthdate, '', {'label_attr': {'class': 'mt-3'}}) }}
+            {{ form_widget(form.birthdate) }}
+            {% if form_errors(form.birthdate) %}
+                <div class="alert alert-danger mt-2">
+                    {{ form_errors(form.birthdate) }}
+                </div>
+            {% endif %}
+
+            {{ form_label(form.image, '', {'label_attr': {'class': 'mt-3'}}) }}
+            {{ form_widget(form.image) }}
+            {% if form_errors(form.image) %}
+                <div class="alert alert-danger mt-2">
+                    {{ form_errors(form.image) }}
+                </div>
+            {% endif %}
+
+            {{ form_label(form.email.first, '', {'label_attr': {'class': 'mt-3'}}) }}
+            {{ form_widget(form.email.first) }}
+            {% if form_errors(form.email) %}
+                <div class="alert alert-danger mt-2">
+                    {{ form_errors(form.email) }}
+                </div>
+            {% endif %}
+            {% if form_errors(form.email.first) %}
+                <div class="alert alert-danger mt-2">
+                    {{ form_errors(form.email.first) }}
+                </div>
+            {% endif %}
+            {{ form_label(form.email.second, '', {'label_attr': {'class': 'mt-3'}}) }}
+            {{ form_widget(form.email.second) }}
+
+            {{ form_label(form.password.first, '', {'label_attr': {'class': 'mt-3'}}) }}
+            {{ form_widget(form.password.first) }}
+            {% if form_errors(form.password.first) %}
+                <div class="alert alert-danger mt-2">
+                    {{ form_errors(form.password.first) }}
+                </div>
+            {% endif %}
+            {{ form_label(form.password.second, '', {'label_attr': {'class': 'mt-3'}}) }}
+            {{ form_widget(form.password.second) }}
+
+            <div class="captcha mt-3">
+                {{ form_label(form.captcha) }}
+                {{ form_widget(form.captcha) }}
+                {% if form_errors(form.captcha) %}
+                    <div class="alert alert-danger mt-2">
+                        {{ form_errors(form.captcha) }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <p class="required-fields mt-3">Champs requis *</p>
+
+            <input type="submit" class="btn btn-primary-custom w-50 mt-5" value="Inscription">
+
+        {{ form_end(form) }}
+
+    </div>
+
+{% endblock %}

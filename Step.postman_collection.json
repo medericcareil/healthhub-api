@@ -1,0 +1,794 @@
+{
+	"info": {
+		"_postman_id": "a4213e91-3a2c-4bdc-bd90-d3d36a1135ab",
+		"name": "Step",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Auth",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@exemple.fr\",\r\n    \"password\": \"Mdpadmin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/auth",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"auth"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Mauvais identifiants",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"azee@exemple.com\",\r\n    \"password\": \"afsdf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/auth",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"auth"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, must-revalidate, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Mar 2022 08:26:37 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "Tue, 08 Mar 2022 08:26:37 GMT"
+								},
+								{
+									"key": "X-Debug-Token",
+									"value": "87fa36"
+								},
+								{
+									"key": "X-Debug-Token-Link",
+									"value": "http://127.0.0.1:8000/_profiler/87fa36"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Content-Length",
+									"value": "97"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 400,\n    \"data\": {\n        \"message\": \"L'email et/ou le mot de passe ne correspondent pas\"\n    }\n}"
+						},
+						{
+							"name": "Succès",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"admin@exemple.fr\",\r\n    \"password\": \"Mdpadmin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/user/auth",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"auth"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, must-revalidate, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Mar 2022 12:13:15 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "Wed, 09 Mar 2022 12:13:16 GMT"
+								},
+								{
+									"key": "X-Debug-Token",
+									"value": "faeac3"
+								},
+								{
+									"key": "X-Debug-Token-Link",
+									"value": "http://127.0.0.1:8000/_profiler/faeac3"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Content-Length",
+									"value": "280"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"data\": {\n        \"id\": \"6a0bce63-2cfa-43f1-8ced-7800f5166e75\",\n        \"email\": \"admin@exemple.fr\",\n        \"pseudo\": \"Michel76\",\n        \"roles\": [\n            \"ROLE_USER\",\n            \"ROLE_ADMIN\"\n        ],\n        \"image\": null,\n        \"gender\": true,\n        \"birthdate\": \"1990-10-10T00:00:00+01:00\",\n        \"created_at\": \"2022-03-09T13:05:52+01:00\",\n        \"updated_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add characteristics",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"b2a5293f-8532-4792-8258-43418a83b73e\",\r\n    \"weight\": 84,\r\n    \"height\": 185\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/add-characteristics",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"add-characteristics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get characteristics",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"b2a5293f-8532-4792-8258-43418a83b73e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/get-characteristics",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"get-characteristics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"9df3ddec-d0d6-4d65-a7ac-d5896f8dc92f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/delete-user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"delete-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"540e717e-92ba-4de7-9880-30b12747cf34\",\r\n    \"pseudo\": \"Pipo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/update-user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"update-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Objective",
+			"item": [
+				{
+					"name": "Add objective type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"d058b303-590e-4749-a445-763c9873349a\",\r\n    \"name_type\": \"steps\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/objective/add-objective-type",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"objective",
+								"add-objective-type"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Succès",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": \"d058b303-590e-4749-a445-763c9873349a\",\r\n    \"name_type\": \"steps\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/objective/add-objective-type",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"objective",
+										"add-objective-type"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, must-revalidate, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Mar 2022 13:05:51 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "Tue, 08 Mar 2022 13:05:51 GMT"
+								},
+								{
+									"key": "X-Debug-Token",
+									"value": "852529"
+								},
+								{
+									"key": "X-Debug-Token-Link",
+									"value": "http://127.0.0.1:8000/_profiler/852529"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Content-Length",
+									"value": "146"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"data\": {\n        \"id\": \"00f45bd6-5e73-4f6d-84a5-fff9b24d42f4\",\n        \"name\": \"steps\",\n        \"created_at\": \"2022-03-08T14:05:51+01:00\",\n        \"updated_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add objective",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"d058b303-590e-4749-a445-763c9873349a\",\r\n    \"objective_type_id\": \"00f45bd6-5e73-4f6d-84a5-fff9b24d42f4\",\r\n    \"value\": 10000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/objective/add-objective",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"objective",
+								"add-objective"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Succès",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": \"d058b303-590e-4749-a445-763c9873349a\",\r\n    \"objective_type_id\": \"00f45bd6-5e73-4f6d-84a5-fff9b24d42f4\",\r\n    \"value\": 10000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/objective/add-objective",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"objective",
+										"add-objective"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, must-revalidate, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Mar 2022 13:07:08 GMT"
+								},
+								{
+									"key": "Expires",
+									"value": "Tue, 08 Mar 2022 13:07:08 GMT"
+								},
+								{
+									"key": "X-Debug-Token",
+									"value": "ccce82"
+								},
+								{
+									"key": "X-Debug-Token-Link",
+									"value": "http://127.0.0.1:8000/_profiler/ccce82"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.2"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Content-Length",
+									"value": "237"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 200,\n    \"data\": {\n        \"id\": \"e7381da7-ec6b-4b75-8c42-c145885bd459\",\n        \"user_id\": \"d058b303-590e-4749-a445-763c9873349a\",\n        \"objective_type_id\": \"00f45bd6-5e73-4f6d-84a5-fff9b24d42f4\",\n        \"value\": [\n            10000\n        ],\n        \"created_at\": \"2022-03-08T14:07:08+01:00\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get objectives types",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"b2a5293f-8532-4792-8258-43418a83b73e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/objective/get-objectives-types",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"objective",
+								"get-objectives-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get objectives",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"b2a5293f-8532-4792-8258-43418a83b73e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/objective/get-objectives",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"objective",
+								"get-objectives"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Activity",
+			"item": [
+				{
+					"name": "Add activity type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"d058b303-590e-4749-a445-763c9873349a\",\r\n    \"name_type\": \"steps\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/activity/add-activity-type",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"activity",
+								"add-activity-type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get activities types",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"4174a31e-6f94-44a7-a937-b84d8d1bbd22\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/activity/get-activities-types",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"activity",
+								"get-activities-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add activity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"d058b303-590e-4749-a445-763c9873349a\",\r\n    \"activity_type_id\": \"eb5ecb13-f601-4f1d-adc6-c0a5e3b9e395\",\r\n    \"data\": {\r\n        \"value\": 14568,\r\n        \"start_date\": \"2022-03-01T00:00:00+01:00\",\r\n        \"end_date\": \"2022-03-01T23:59:59+01:00\"\r\n    }  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/activity/add-activity",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"activity",
+								"add-activity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get activities",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"f45654f3-d7a6-4256-91bc-97782b468839\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/activity/get-activities",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"activity",
+								"get-activities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Statistic",
+			"item": [
+				{
+					"name": "Get statistics between",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"4174a31e-6f94-44a7-a937-b84d8d1bbd22\",\r\n    \"activity_type_id\": \"e834841d-5cac-4d7f-b863-a6f57842a8da\",\r\n    \"start_date\": \"2022-01-28T00:00:00+01:00\",\r\n    \"end_date\": \"2022-03-02T00:00:00+01:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/statistic/get-stats-between",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"statistic",
+								"get-stats-between"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
